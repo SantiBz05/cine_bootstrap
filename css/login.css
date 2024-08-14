@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-image: url(../img/fondito.png);
 }
 
 h2 {
@@ -32,6 +32,7 @@ h2 {
 
 .content {
     background-image: url('../img/tiket2.png');
+    background-color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -42,7 +43,7 @@ h2 {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    
     backface-visibility: hidden;
     padding: 20px;
 }
