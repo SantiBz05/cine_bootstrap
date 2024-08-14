@@ -98,29 +98,41 @@
     <section id="pelisPromos" class="container my-4">
       <div class="row">
         <!-- Pelis -->
-        <div class="col-md-9 d-flex flex-column">
-          <section id="pelis" class="my-4 flex-grow-1">
-            <h4 class="text-center my-3 text-danger" style="font-weight: bold;">Echa un vistazo a nuestra selección!</h4>
+        <div class="col-md-9">
+          <section id="pelis" class="my-4">
+            <h4 class="text-center my-3 text-danger fw-bold">¡Echa un vistazo a nuestra selección!</h4>
             <!-- Botones para alternar galerías -->
-            <div class="mb-3">
+            <div class="mb-3 text-center">
               <button id="show-gallery1" class="btn btn-danger me-2">Cartelera</button>
               <button id="show-gallery2" class="btn btn-danger">Próximamente</button>
             </div>
             
             <!-- Contenedor de las galerías -->
-            <div id="gallery-container" class="d-flex flex-column h-100">
+            <div id="gallery-container" class="d-flex flex-column">
               <!-- Galería 1 -->
-              <div id="gallery1" class="gallery flex-grow-1">
-                <a href="cartelera.html"><img src="img/Akira.jpg" alt="Image 1" class="gallery-image"></a>
-                <a href="cartelera.html"><img src="img/titanic.jpg" alt="Image 2" class="gallery-image"></a>
-                <a href="cartelera.html"><img src="img/volverAlFuturo.jpg" alt="Image 2" class="gallery-image"></a>
+              <div id="gallery1" class="row g-3 text-center">
+                <div class="col-6 col-md-4">
+                  <a href="cartelera.html"><img src="img/Akira.jpg" alt="Image 2" class="img-fluid rounded gallery-image w-100"></a>
+                </div>
+                <div class="col-6 col-md-4">
+                  <a href="cartelera.html"><img src="img/titanic.jpg" alt="Image 2" class="img-fluid rounded gallery-image w-100"></a>
+                </div>
+                <div class="col-6 col-md-4">
+                  <a href="cartelera.html"><img src="img/volverAlFuturo.jpg" alt="Image 3" class="img-fluid rounded gallery-image w-100"></a>
+                </div>
               </div>
               
               <!-- Galería 2 (oculta por defecto) -->
-              <div id="gallery2" class="gallery d-none flex-grow-1">
-                <a href="proximamente.html"><img src="img/padrinovich.jpeg" alt="Image 3" class="gallery-image"></a>
-                <a href="proximamente.html"><img src="img/2001.jpg" alt="Image 4" class="gallery-image"></a>
-                <a href="proximamente.html"><img src="img/Indiana_Jones.jpg" alt="Image 4" class="gallery-image"></a>
+              <div id="gallery2" class="row g-3 text-center d-none">
+                <div class="col-6 col-md-4">
+                  <a href="proximamente.html"><img src="img/padrinovich.jpeg" alt="Image 3" class="img-fluid rounded gallery-image w-100"></a>
+                </div>
+                <div class="col-6 col-md-4">
+                  <a href="proximamente.html"><img src="img/2001.jpg" alt="Image 4" class="img-fluid rounded gallery-image w-100"></a>
+                </div>
+                <div class="col-6 col-md-4">
+                  <a href="proximamente.html"><img src="img/Indiana_Jones.jpg" alt="Image 5" class="img-fluid rounded gallery-image w-100"></a>
+                </div>
               </div>
             </div>
           </section>
@@ -129,24 +141,22 @@
         <!-- Promociones -->
         <div class="col-md-3">
           <section id="promos" class="my-4">
-            <h4 class="text-center my-3 text-danger" style="font-weight: bold;">Las mejores Promociones!</h4>
-            <div class="container">
-              <div class="row">
-                <div class="col-12 mb-3">
-                  <a href="/promociones.html">
-                    <img src="/img/promo1.jpg" alt="Promoción 1" class="img-fluid mx-auto d-block w-100 promo-img">
-                  </a>
-                </div>
-                <div class="col-12 mb-3">
-                  <a href="/promociones.html">
-                    <img src="/img/promo2.jpg" alt="Promoción 1" class="img-fluid mx-auto d-block w-100 promo-img">
-                  </a>
-                </div>
-                <div class="col-12 mb-3">
-                  <a href="/promociones.html">
-                    <img src="/img/promo4.jpg" alt="Promoción 1" class="img-fluid mx-auto d-block w-100 promo-img">
-                  </a>
-                </div>
+            <h4 class="text-center my-3 text-danger fw-bold">¡Las mejores Promociones!</h4>
+            <div class="row g-3 text-center">
+              <div class="col-12">
+                <a href="/promociones.html">
+                  <img src="/img/promo1.jpg" alt="Promoción 1" class="img-fluid rounded promo-img w-100">
+                </a>
+              </div>
+              <div class="col-12">
+                <a href="/promociones.html">
+                  <img src="/img/promo2.jpg" alt="Promoción 2" class="img-fluid rounded promo-img w-100">
+                </a>
+              </div>
+              <div class="col-12">
+                <a href="/promociones.html">
+                  <img src="/img/promo4.jpg" alt="Promoción 2" class="img-fluid rounded promo-img w-100">
+                </a>
               </div>
             </div>
           </section>
@@ -154,7 +164,7 @@
       </div>
     </section>
 
-<!-- combos y Redes -->
+    <!-- combos y Redes -->
     <section id="combosRedes" class="container my-4">
       <div class="row">
         <!-- Combos -->
@@ -192,16 +202,16 @@
         <!-- Redes sociales -->
         <div class="col-md-3 d-flex align-items-stretch">
           <div class="social-media-container w-100 d-flex flex-column justify-content-center">
-            <h4 class="text-center my-3 text-danger" style="font-weight: bold;">Síguenos en nuestras redes sociales</h4>
+            <h4 class="text-center my-3 text-danger fw-bold">Síguenos en nuestras redes sociales</h4>
             <div class="row justify-content-center">
               <div class="col-12 mb-3 text-center">
-                <img src="/img/face.png" alt="Imagen 1" class="social-img">
+                <img src="/img/face.png" alt="Facebook" class="social-img">
               </div>
               <div class="col-12 mb-3 text-center">
-                <img src="/img/insta.png" alt="Imagen 2" class="social-img">
+                <img src="/img/insta.png" alt="Instagram" class="social-img">
               </div>
               <div class="col-12 mb-3 text-center">
-                <img src="/img/x.png" alt="Imagen 3" class="social-img">
+                <img src="/img/x.png" alt="X" class="social-img">
               </div>
             </div>
           </div>
@@ -215,8 +225,5 @@
   
     <script src="/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

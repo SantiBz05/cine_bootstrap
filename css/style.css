@@ -21,10 +21,10 @@ object-fit: contain;
 }
 
 #gallery-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  min-height: 200px;
+  max-height: 100vh; /* Limita el alto máximo al 100% del alto de la ventana */
 }
+
 
 .gallery {
   display: flex;
@@ -35,15 +35,28 @@ object-fit: contain;
   position: relative; /* Posiciona el contenedor relativo */
 }
 
+/* Asegura que las imágenes en la galería tengan el mismo tamaño y no se distorsionen */
 .gallery-image {
-  flex: 1 0 22%; /* Ajusta este valor para cambiar el tamaño de las imágenes */
-  max-width: 100%;
-  height: 450px; /* Ajusta la altura fija para igualar el tamaño de las imágenes */
-  object-fit: cover; /* Asegura que las imágenes llenen el espacio sin distorsionarse */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añade transición para los efectos */
-  transform-origin: center center; /* Mantiene la imagen centrada durante el aumento */
-  margin: 0; /* Asegúrate de que no haya margen adicional */
-  padding: 0; /* Asegúrate de que no haya relleno adicional */
+  width: 100%; /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+  height: 300px; /* Ajusta la altura según tus necesidades */
+  object-fit: cover; /* Mantiene la proporción de la imagen y recorta el contenido que sobresale */
+}
+
+
+/* Para pantallas grandes, ajusta el tamaño máximo de las imágenes */
+@media (min-width: 768px) {
+  .gallery-image {
+    max-width: 100%; /* Asegura que las imágenes no se estiren */
+    height: 100%;
+  }
+}
+
+/* Para pantallas pequeñas, asegura que las imágenes ocupen todo el ancho del contenedor */
+@media (max-width: 767px) {
+  .gallery-image {
+    width: 100%; /* Imágenes ocupan todo el ancho del contenedor */
+    height: auto;
+  }
 }
 
 .gallery-image:hover {
