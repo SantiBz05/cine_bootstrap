@@ -1,0 +1,56 @@
+body{
+    background-image: url(../img/fondito.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.navbar-nav .nav-link:hover {
+    color: orange;
+}
+
+#carouselCombos {
+    height: 3%; /* Ajusta según el alto del carrusel */
+  }
+
+
+.social-img {
+max-height: 80px; /* Ajusta según el tamaño deseado */
+object-fit: contain;
+}
+
+#gallery-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: 100%;
+  overflow: hidden; /* Evita el desbordamiento */
+  position: relative; /* Posiciona el contenedor relativo */
+}
+
+.gallery-image {
+  flex: 1 0 22%; /* Ajusta este valor para cambiar el tamaño de las imágenes */
+  max-width: 100%;
+  height: 450px; /* Ajusta la altura fija para igualar el tamaño de las imágenes */
+  object-fit: cover; /* Asegura que las imágenes llenen el espacio sin distorsionarse */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añade transición para los efectos */
+  transform-origin: center center; /* Mantiene la imagen centrada durante el aumento */
+  margin: 0; /* Asegúrate de que no haya margen adicional */
+  padding: 0; /* Asegúrate de que no haya relleno adicional */
+}
+
+.gallery-image:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade una sombra sutil */
+}
+
+.promo-img {
+  object-fit: cover; /* Ajusta las imágenes de promociones al contenedor */
+}
