@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,42 +11,53 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">
-                <img src="/img/logo.jpeg" alt="Cinta de película" width="40" height="40" class="d-inline-block align-text-top">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="/cartelera.html">Cartelera</a>
-                    <a class="nav-link" href="/proximamente.html">Próximamente</a>
-                    <a class="nav-link" href="/combos.html">Combos</a>
-                    <a class="nav-link" href="/promociones.html">Promociones</a>
-                    <a class="nav-link" href="/sobreNosotros.html">Sobre Nosotros</a>
+    <!-- Header -->
+    <section id="Header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/img/logo.jpeg" alt="Cinta de película" width="40" height="40" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="/cartelera.html">Cartelera</a>
+                        <a class="nav-link" href="/proximamente.html">Próximamente</a>
+                        <a class="nav-link" href="/combos.html">Combos</a>
+                        <a class="nav-link" href="/promociones.html">Promociones</a>
+                        <a class="nav-link" href="/sobreNosotros.html">Sobre Nosotros</a>
+                    </div>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="/img/pefilIcon.jpg" alt="Perfil" width="32" height="32" class="rounded-circle">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/miPerfil.html">Mi Perfil</a></li>
+                                <li><a class="dropdown-item" href="/ayuda.html">Ayuda</a></li>
+                                <li><a class="dropdown-item" href="/login.html">Cerrar Sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="/img/pefilIcon.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/miPerfil.html">Mi Perfil</a></li>
-                            <li><a class="dropdown-item" href="/ayuda.html">Ayuda</a></li>
-                            <li><a class="dropdown-item" href="/login.html">Cerrar Sesión</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <header>
+        <div class="d-none d-md-block">
+            <div class="container-fluid p-0">
+                <img src="./img/perfil.png" alt="" class="img-fluid w-100">
             </div>
         </div>
-    </nav>
+    </header>
 
     <div class="container mt-5 mb-4">
         <div class="row">
             <div class="col-12 text-center">
-                <h1>Mi Perfil</h1>
+                <h1>TE LO DEDICO SANTI <3</h1>
             </div>
         </div>
         <div class="row mt-4">
@@ -122,7 +133,10 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                      This is some text within a card body.
+                        <div id="historialButacas">
+                            <h5>Historial de Butacas:</h5>
+                            <!-- Aquí se cargarán las butacas seleccionadas -->
+                        </div>
                     </div>
                 </div>
             </div>

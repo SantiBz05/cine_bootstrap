@@ -2,16 +2,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const user = JSON.parse(localStorage.getItem('loggedInUser'));
 
     if (user) {
-        document.getElementById('inputNombre').value = user.nombre;
+        document.getElementById('inputNombre').value = user.nombre || '';
         document.getElementById('inputApellido').value = user.apellido || '';
-        document.getElementById('inputEmail').value = user.email;
-        document.getElementById('inputPassword').value = user.password;
+        document.getElementById('inputEmail').value = user.email || '';
+        document.getElementById('inputPassword').value = user.password || '';
         document.getElementById('inputTelefono').value = user.telefono || '';
         document.getElementById('inputDni').value = user.dni || '';
+
+        // Mostrar historial de butacas seleccionadas
+        const butacasSeleccionadas = user.butacasSeleccionadas || [];
+        const historialElement = document.getElementById('historialButacas');
+        if (historialElement) {
+            historialElement.innerHTML = '<h5>Historial de Butacas:</h5>';
+            if (butacasSeleccionadas.length > 0) {
+                butacasSeleccionadas.forEach(butaca => {
+                    const listItem = document.createElement('p');
+                    listItem.textContent = butaca;
+                    historialElement.appendChild(listItem);
+                });
+            } else {
+                historialElement.innerHTML += '<p>No hay butacas seleccionadas.</p>';
+            }
+        }
     } else {
         console.error('No se encontraron datos de usuario en localStorage');
     }
 
+    // Funciones para mostrar el ícono de éxito
     function showSuccessIcon(inputId) {
         const inputElement = document.getElementById(inputId);
         const icon = document.createElement('span');
@@ -154,20 +171,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Función para actualizar el usuario en la lista de usuarios
-    function updateUserInList(updatedUser) {
+    function updateUserInList(user) {
+        // Esta función actualizará la lista de usuarios en el localStorage
+        // Busca todos los usuarios guardados y actualiza el que coincide con el nombre del usuario
         let users = JSON.parse(localStorage.getItem('users')) || [];
-        // Asegurarse de que los cambios se reflejan en la lista de usuarios
-        users = users.map(user =>
-            (user.email === updatedUser.email) ? updatedUser : user
-        );
-        localStorage.setItem('users', JSON.stringify(users));
-        console.log('Usuarios actualizados en localStorage:', JSON.parse(localStorage.getItem('users')));
-    }
-
-    // Función para validar email
-    function validateEmail(email) {
-        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
+        const index = users.findIndex(u => u.email === user.email);
+        if (index !== -1) {
+            users[index] = user;
+            localStorage.setItem('users', JSON.stringify(users));
+        }
     }
 });
