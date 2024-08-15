@@ -8,12 +8,7 @@ function validateLogin() {
     var password = document.getElementById('loginPassword').value;
 
     if (nombre === "" || password === "") {
-        alert('Todos los campos son obligatorios.');
-        if (nombre === "") {
-            document.getElementById('loginNombre').focus();
-        } else {
-            document.getElementById('loginPassword').focus();
-        }
+        showError('Todos los campos son obligatorios.', nombre === "" ? 'loginNombre' : 'loginPassword');
     } else {
         var users = JSON.parse(localStorage.getItem('users')) || [];
         var user = users.find(user =>
@@ -21,9 +16,11 @@ function validateLogin() {
         );
 
         if (user) {
+            // Guarda los datos del usuario en localStorage para la sesión actual
+            localStorage.setItem('loggedInUser', JSON.stringify(user));
             window.location.href = 'index.html';
         } else {
-            alert('Usuario o contraseña incorrectos.');
+            showError('Usuario o contraseña incorrectos.', 'loginNombre');
         }
     }
 }
@@ -34,43 +31,40 @@ function validateSignUp() {
     var password = document.getElementById('signupPassword').value;
 
     if (nombre === "" || email === "" || password === "") {
-        alert('Todos los campos son obligatorios.');
-        if (nombre === "") {
-            document.getElementById('signupNombre').focus();
-        } else if (email === "") {
-            document.getElementById('signupEmail').focus();
-        } else {
-            document.getElementById('signupPassword').focus();
-        }
+        showError('Todos los campos son obligatorios.', nombre === "" ? 'signupNombre' : (email === "" ? 'signupEmail' : 'signupPassword'));
     } else if (!validateEmail(email)) {
-        alert('Por favor, introduce un email válido.');
-        document.getElementById('signupEmail').focus();
+        showError('Por favor, introduce un email válido.', 'signupEmail');
     } else {
         var users = JSON.parse(localStorage.getItem('users')) || [];
         var newUser = {
             nombre: nombre,
             email: email,
-            password: password
+            password: password,
+            butacasSeleccionadas: []  // Inicializa el historial de butacas seleccionadas
         };
 
         var userExists = users.some(user =>
-            user.nombre === newUser.nombre &&
-            user.email === newUser.email &&
-            user.password === newUser.password
+            user.nombre === newUser.nombre || user.email === newUser.email
         );
 
         if (userExists) {
-            alert('Este usuario ya está registrado.');
+            showError('Este usuario ya está registrado.', 'signupEmail');
         } else {
             users.push(newUser);
             localStorage.setItem('users', JSON.stringify(users));
-            window.location.href = 'index.html'; // Redirige a index.html
+            // Guarda el nuevo usuario en localStorage y redirige a la página de inicio
+            localStorage.setItem('loggedInUser', JSON.stringify(newUser));
+            window.location.href = 'index.html';
         }
     }
 }
 
-
 function validateEmail(email) {
     var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
+}
+
+function showError(message, fieldId) {
+    alert(message);
+    document.getElementById(fieldId).focus();
 }
