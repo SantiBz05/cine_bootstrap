@@ -32,7 +32,7 @@ h2 {
 
 .content {
     background-image: url('../img/tiket2.png');
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -46,6 +46,7 @@ h2 {
     
     backface-visibility: hidden;
     padding: 20px;
+    filter: drop-shadow(15px 15px 5px rgba(0, 0, 0, 0.2));
 }
 
 

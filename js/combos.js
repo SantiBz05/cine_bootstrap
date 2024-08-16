@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         cart.forEach(function(item, i) {
             cartHtml += '<li class="list-group-item">' + item.name + ' $' + item.price.toFixed(2) +
-                '<button class="btn btn-outline-danger btn-sm float-right btn-remove-from-cart" data-i="' + i + '"><i class="bi bi-x-lg"></i></button></li>';
+                '<button class="btn btn-outline-danger btn-sm float-right btn-remove-from-cart ms-2" data-i="' + i + '"><i class="bi bi-x-lg"></i></button></li>';
             total += item.price;
         });
 
